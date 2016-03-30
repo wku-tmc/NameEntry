@@ -1,5 +1,6 @@
 package sg.edu.tmc.comp1661.nameentry;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -29,12 +30,13 @@ public class MainActivity extends AppCompatActivity {
                 String name = editText.getText().toString();
                 Toast.makeText(MainActivity.this, "Name: " + name,
                         Toast.LENGTH_LONG).show();
+
+                //code to start a new activity/screen
+                Intent intent = new Intent(MainActivity.this, Main2Activity.class);
+                intent.putExtra("name", name);
+                startActivity(intent);
             }
         });
-
-
-
-
 
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
